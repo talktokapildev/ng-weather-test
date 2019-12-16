@@ -1,0 +1,16 @@
+<mat-toolbar>
+  <span id="title">Weather App</span>
+  <mat-form-field>
+    <mat-label>Select a Location</mat-label>
+    <mat-select
+      [(ngModel)]="selected"
+      name="location"
+      (selectionChange)="locChangeHandler($event)"
+    >
+      <mat-option>None</mat-option>
+      <mat-option *ngFor="let l of locations" [value]="l.value">
+        {{ l.viewValue }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+</mat-toolbar>
